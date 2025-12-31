@@ -1,5 +1,10 @@
 import 'package:test/test.dart';
 
-void main() {
+import '../bin/string_calculator.dart';
 
+void main() {
+  test('empty input returns 0',(){
+    final sc = StringCalculator();
+    expect(sc.add(''),0);
+  });
 }
