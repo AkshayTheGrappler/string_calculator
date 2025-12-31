@@ -28,5 +28,9 @@ void main() {
     expect(sc.add('1\n2,3'), equals(6));
   });
 
+  test('supports custom delimiter defined in header', () {
+    final sc = StringCalculator();
+    expect(sc.add('//;\n1;2'), equals(3));
+  });
 
 }
