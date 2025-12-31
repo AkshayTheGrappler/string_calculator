@@ -3,6 +3,8 @@ class StringCalculator {
     if(numbers.isEmpty){
       return 0;
     }
-    return int.parse(numbers);
+    final parts = numbers.split(',');
+    if (parts.length == 1) return int.parse(parts[0]);
+    return int.parse(parts[0]) + int.parse(parts[1]);
   }
 }

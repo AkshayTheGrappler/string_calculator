@@ -13,4 +13,9 @@ void main() {
     expect(sc.add('1'), equals(1));
   });
 
+  test('two numbers comma separated returns sum', () {
+    final sc = StringCalculator();
+    expect(sc.add('1,2'), equals(3));
+  });
+
 }
