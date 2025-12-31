@@ -33,4 +33,15 @@ void main() {
     expect(sc.add('//;\n1;2'), equals(3));
   });
 
+  test('negative number throws exception', () {
+    final sc = StringCalculator();
+    expect(
+          () => sc.add('1,-2,3'),
+      throwsA(
+        predicate((e) => e.toString().contains('negatives not allowed: -2')),
+      ),
+    );
+  });
+
+
 }

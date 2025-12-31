@@ -12,7 +12,13 @@ class StringCalculator {
       delimiterPattern = RegExp.escape(delimiter);
     }
 
-    final parts = body.split(RegExp(delimiterPattern));
-    return parts.map(int.parse).reduce((a, b) => a + b);
+    final nums = body.split(RegExp(delimiterPattern)).map(int.parse).toList();
+
+    final negatives = nums.where((n) => n < 0).toList();
+    if (negatives.isNotEmpty) {
+      throw Exception('negatives not allowed: ${negatives.join(",")}');
+    }
+
+    return nums.reduce((a, b) => a + b);
   }
 }
