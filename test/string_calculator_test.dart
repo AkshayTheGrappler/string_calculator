@@ -23,5 +23,10 @@ void main() {
     expect(sc.add('1,2,3,4'), equals(10));
   });
 
+  test('new lines between numbers are allowed', () {
+    final sc = StringCalculator();
+    expect(sc.add('1\n2,3'), equals(6));
+  });
+
 
 }
