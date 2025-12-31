@@ -18,4 +18,10 @@ void main() {
     expect(sc.add('1,2'), equals(3));
   });
 
+  test('unknown amount of numbers returns sum', () {
+    final sc = StringCalculator();
+    expect(sc.add('1,2,3,4'), equals(10));
+  });
+
+
 }
